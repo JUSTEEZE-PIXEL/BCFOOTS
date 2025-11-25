@@ -1,0 +1,341 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    
+}
+
+/* Define the shake animation */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+
+.navigation{
+    display: flex;
+    position: fixed;
+    background-color: rgb(0, 0, 0);
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    height: 4rem;
+    z-index: 100;
+}
+
+.logo{
+    height: 8rem;
+    width: 10rem;
+    
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content:space-around;
+    gap: 2rem;
+    margin-right: 2rem;
+}
+nav ul li a{
+    text-decoration: none;
+    color: rgb(235, 193, 9);
+   font-size: larger;
+   font-style: italic;
+}
+
+nav ul li a:hover{
+  color: #ffffff; /* Changes text color on hover */
+  background-color: rgba(235, 193, 9, 0.2); /* Optional: adds a subtle background highlight */
+  padding: 0.3rem 0.6rem; /* Optional: adds spacing for better visual effect */
+  border-radius: 0.5rem; /* Optional: smooth corners */
+  transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+.pro{
+    background-color: rgb(250, 249, 243);
+    padding-top: 4rem;
+    height: 100vh;
+    
+}
+
+.product-1{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+.pro-img{
+    padding: 1rem;
+}
+.pro-img img{
+    height: 30rem;
+    width: 40rem;
+    border-radius: 2rem;
+    object-fit: cover;
+
+}
+
+.pro-text{
+    background-color:  rgb(5, 0, 22);
+    width: 30rem;
+    padding: 1rem;
+    color: rgb(255, 174, 0);
+    font-size:1rem;
+    height: 36.2rem;
+    margin-top: rem;    
+}
+
+.order-btn{
+    padding: 1rem;
+    background-color: rgb(255, 174, 0);;
+    color: black;
+    position: relative;
+    top:5rem ;
+    left:0 ;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 2rem;
+    display: inline-block;
+    animation: shake 0.5s;
+    animation-iteration-count: infinite; /* keeps shaking */
+    cursor: pointer;
+}
+
+
+.pro-text a:hover{
+    transform: translateY(20px);
+}
+.pro-text ul li{
+    list-style: none;
+    font-size: 1rem;
+    line-height: 2rem;
+    margin-top: 3rem;
+    font-style: italic;
+}
+.li-text{
+    color:white;
+    font-style: normal;
+    text-transform: lowercase;
+}
+
+.search-box {
+    display: flex;
+}
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+}
+.search-box input {
+  padding: 6px 12px;
+  border: 1px solid #ee9d07;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+}
+
+.search-icon{
+    display: none;
+}
+
+.search-box button {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-left: none;
+  background: #e99905;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+}
+
+.foot{
+    background-color: rgb(0, 0, 0);
+    height: fit-content;
+    margin-top: rem;
+    color: white;
+}
+.foot-image img{
+     height: 10rem;
+    width: 20rem;
+}
+
+
+.foot-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: rem;
+    padding-left: 8rem;
+}
+
+.foot-content h2{
+    font-size:4rem;
+    font-style: italic;
+    color: rgb(235, 193, 9);
+    position: relative;
+    top:-8rem ;
+    left:30rem ;
+    
+}
+.imgs{
+    width:8rem ;
+    height:8rem ;
+     /* background-color:white ; */
+    margin: 1rem;
+
+}
+
+.imgs:hover{
+    background-color: #e99905;
+    border-radius: 3rem;
+    transform: translateY(20PX);
+}
+
+
+@media(max-width:768px){
+      .navigation {
+        padding: 0 1rem;
+        height: 4.5rem;
+    }
+
+    .logo {
+        height: 4rem;
+        width: 7rem;
+    }
+
+    /* Hide nav links by default */
+    .nav-links {
+        position: absolute;
+        top: 4.5rem;
+        left: 0;
+        width: 100%;
+        background: black;
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+        padding: 2rem 0;
+        display: none;
+        z-index: 200;
+    }
+
+    /* When hamburger is clicked */
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Hamburger visible on small screens */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    .hamburger .bar {
+        height: 3px;
+        width: 25px;
+        background: white;
+        transition: 0.3s;
+    }
+
+    /* Hamburger turns into X */
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* ===== MOBILE SEARCH ===== */
+    .search-container {
+        position: relative;
+    }
+
+    /* Search icon only */
+    .search-icon {
+        display: block;
+        font-size: 1.6rem;
+        color: white;
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-right: 0.5rem;
+    }
+
+    /* Search box hidden by default */
+    .search-box {
+        display: none;
+        position: absolute;
+        top: 3rem;
+        right: 0;
+        background: white;
+        padding: 0.5rem;
+        border-radius: 10px;
+        width: 14rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Search box when active */
+    .search-box.active {
+        display: flex;
+    }
+
+    .search-box input {
+        width: 100%;
+        border-radius: 10px;
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+    }
+    
+    .pro-text{
+        background-color: rgb(1, 2, 31);
+    }
+    
+    .product-1{
+        background-color: rgb(1, 2, 31);
+    }
+    .pro-img img{
+        width: 20rem;
+        margin-left: 2rem;
+
+    }
+    .foot-image{
+        position: relative;
+        top: 20rem;
+        left:-4rem;
+        
+    }
+
+    .foot-content {
+        flex-direction: column;
+        padding-left: 0;
+        text-align: center;
+        /* height: 20rem; */
+        padding-top: 10rem;
+
+    }
+
+    .foot-content h2 {
+        position: static;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .imgs {
+        width: 5rem;
+        height: 5rem;
+    }
+}
